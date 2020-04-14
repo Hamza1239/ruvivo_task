@@ -6,6 +6,8 @@ import RecordedLine from './recorded';
 import {Link} from 'react-router-dom';
 import Button from '../global/button';
 import BackdropFilter from "react-backdrop-filter";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import FeatherIcon from 'feather-icons-react';
 
  
 class Home extends React.Component {
@@ -67,22 +69,21 @@ class Home extends React.Component {
 			})
 		}
 
-		handleToggleCallOpening3(){
-			this.setState({
-				third_call: !this.state.third_call
-			})
-		}
 
-		handleToggleCallOpening2(){
-			this.setState({
-				second_call: !this.state.second_call
-			})
-		}
-
-		handleToggleCallOpening1(){
-			this.setState({
-				first_call: !this.state.first_call
-			})
+		handleToggleCallOpening(call){
+			if(call==1){
+				this.setState({
+					first_call: !this.state.first_call
+				})
+			} else if (call == 2){
+				this.setState({
+					second_call: !this.state.second_call
+				})
+			} else if (call == 3){
+				this.setState({
+					third_call: !this.state.third_call
+				})
+			}
 		}
 
 		handleRecordedLine(){
@@ -106,15 +107,17 @@ class Home extends React.Component {
 						<Col md={2} style={{paddingLeft:40}}>
 							
 							<Row style={{paddingTop:8, marginLeft:10, width:90+'%', borderRight:'3px solid #f3f4f7', cursor:'pointer'}} > 
-								<img style={{ width: 25, height: 25, marginTop:5 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/back.png"} />
-								<p style={{marginLeft:10, paddingTop:5}}>Back</p>
+								 <FeatherIcon icon="arrow-left" size="22" color="#a1a9b3" style={{marginTop:7}} /> 
+								<p style={{marginLeft:10, paddingTop:5, color:'a1a9b3'}}>Back</p>
 							</Row>
 						</Col>
 						<Col md={3} style={{paddingLeft:40}}>
 							<div style={{marginTop:10, marginLeft:-28, borderRight:'3px solid #f3f4f7'}}> 
 								<p style={{color:'#332a7c', fontWeight:'bold', fontSize:24, fontFamily:'F37Ginger'}}>Jerome Murphy</p>
+								
 							</div>
 						</Col>
+						
 						<Col md={5} style={{paddingTop:10, marginLeft:-7}}>
 							<p style={{fontSize:12, fontFamily:'F37Ginger', color:'#11263c',fontWeight:'bold', margin:0, padding:0}}>4:14 mins</p>
 							<p style={{fontSize:12, fontFamily:'F37Ginger', color:'#11263c',fontWeight:'bold', margin:0, padding:0}}>Sep 10, 2020</p>
@@ -122,7 +125,7 @@ class Home extends React.Component {
 						<Col md={1} style={{paddingLeft:40, marginTop:15}}>
 							
 							<Row style={{cursor:'pointer', width:120, height:30,paddingLeft:12, backgroundColor:'#11263c', boxShadow:'0 3px 6px 0 rgba(161, 169, 179, 0.3)', borderRadius:5}}>
-								<img style={{ width: 12, height: 15, marginTop:7 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/copy.png"} />
+							<FeatherIcon icon="copy" size="18" color="white" style={{marginTop:6}} /> 
 								<p style={{paddingLeft:10, paddingTop:3, fontSize:11, fontFamily:'F37Ginger',lineHeight:2.3, color:"#ffffff"}}>Copy Call ID</p>
 							</Row>
 						</Col>
@@ -132,7 +135,7 @@ class Home extends React.Component {
 						<Col md={2}>
 							<div style={{backgroundColor:'#332a7c', boxShadow:'0 1px 3px 0 rgba(51, 42, 124, 0.3)', cursor:'pointer', height:70, width:70, marginTop:30, marginLeft:30, borderRadius:50+'%'}}>
 								<div style={{display:'flex', justifyContent:'center', alignItems:'center', paddingTop:13}}> 
-									<img style={{ width: 23, height: 30, marginTop:7 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/play-white.png"} />
+									<FeatherIcon icon="play" size="30" color="white" style={{marginTop:7}} /> 
 								</div>
 							</div>
 							<div style={{paddingLeft:28, paddingTop:20}}>
@@ -141,6 +144,7 @@ class Home extends React.Component {
 						</Col>
 						<Col md={10}>
 							<div style={{display:'flex', justifyContent:'center',marginBottom:0,paddingBottom:0, marginTop:5, marginLeft:40}}>
+							
 								<p style={{padding:0, margin:0, color:'#a1a9b3', fontSize:10,fontFamily:'F37Ginger'}}>
 									AGENT
 								</p>
@@ -194,10 +198,10 @@ class Home extends React.Component {
 							</div>
 							<div style={{position:'absolute', right:70, bottom:1}}>
 								<Row> 
-									<p style={{color:'#a1a9b3', fontSize:14,fontFamily:'F37Ginger'}}>
+									<p style={{color:'#a1a9b3', fontSize:14,fontFamily:'F37Ginger', marginRight:5}}>
 										1x
 									</p>
-									<img style={{marginLeft:10, width: 12, height: 6, marginTop:7 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/top-big.png"} />
+									<FeatherIcon icon="chevron-up" size="18" color="#a1a9b3"/>
 								</Row>
 							</div>
 						</Col>
@@ -237,12 +241,12 @@ class Home extends React.Component {
 
 							{this.state.all?
 							<div>
-							<a onClick={()=> this.handleToggleCallOpening1()} style={{cursor:'pointer'}}> 
+							<a onClick={()=> this.handleToggleCallOpening(1)} style={{cursor:'pointer'}}> 
 								<Row style={{marginLeft:15, marginTop:15}}> 
 								{this.state.first_call?
-									<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/top-small.png"} />
+									<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 									:
-									<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/bottom-small.png"} />
+									<FeatherIcon icon="chevron-down" size="18" color='#11263c' />
 								}
 									<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
 										Call Opening
@@ -254,9 +258,9 @@ class Home extends React.Component {
 									<a onClick={()=> this.handleRecordedLine()} style={{cursor:'pointer'}}> 
 										<Row style={{marginLeft:25, marginTop:10}}> 
 											{this.state.recorded_line?
-												<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/top-small.png"} />
+												<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 												:
-												<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/bottom-small.png"} />
+												<FeatherIcon icon="chevron-down" size="18" color='#11263c' />
 											}
 											<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
 												Recorded Line
@@ -279,9 +283,9 @@ class Home extends React.Component {
 									<a onClick={()=> this.handleGreeting()} style={{cursor:'pointer'}}> 
 										<Row style={{marginLeft:25, marginTop:10}}> 
 											{this.state.greeting?
-												<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/top-small.png"} />
+												<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 												:
-												<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/bottom-small.png"} />
+												<FeatherIcon icon="chevron-down" size="18" color='#11263c' />
 											}
 											<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
 												Meaningful Greeting
@@ -313,12 +317,12 @@ class Home extends React.Component {
 									</div>
 								</>
 							: null}
-							<a onClick={()=> this.handleToggleCallOpening2()} style={{cursor:'pointer'}}> 
+							<a onClick={()=> this.handleToggleCallOpening(2)} style={{cursor:'pointer'}}> 
 								<Row style={{marginLeft:15, marginTop:15}}> 
 								{this.state.second_call?
-									<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/top-small.png"} />
+									<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 									:
-									<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/bottom-small.png"} />
+									<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 								}
 									<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
 										Call Opening
@@ -335,12 +339,12 @@ class Home extends React.Component {
 										})}
 								</div>
 								: null}
-							<a onClick={()=> this.handleToggleCallOpening3()} style={{cursor:'pointer'}}> 
+							<a onClick={()=> this.handleToggleCallOpening(3)} style={{cursor:'pointer'}}> 
 								<Row style={{marginLeft:15, marginTop:15}}> 
 									{this.state.third_call?
-										<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/top-small.png"} />
+										<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 										:
-										<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/bottom-small.png"} />
+										<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 									}
 										<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
 											Call Opening
@@ -363,12 +367,12 @@ class Home extends React.Component {
 
 							{this.state.found?
 							<div>
-								<a onClick={()=> this.handleToggleCallOpening1()} style={{cursor:'pointer'}}> 
+								<a onClick={()=> this.handleToggleCallOpening(1)} style={{cursor:'pointer'}}> 
 									<Row style={{marginLeft:15, marginTop:15}}> 
 									{this.state.first_call?
-										<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/top-small.png"} />
+										<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 										:
-										<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/bottom-small.png"} />
+										<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 									}
 										<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
 											Call Opening
@@ -380,9 +384,9 @@ class Home extends React.Component {
 										<a onClick={()=> this.handleRecordedLine()} style={{cursor:'pointer'}}> 
 											<Row style={{marginLeft:25, marginTop:10}}> 
 												{this.state.recorded_line?
-													<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/top-small.png"} />
+													<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 													:
-													<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/bottom-small.png"} />
+													<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 												}
 												<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
 													Recorded Line
@@ -405,9 +409,9 @@ class Home extends React.Component {
 										<a onClick={()=> this.handleGreeting()} style={{cursor:'pointer'}}> 
 											<Row style={{marginLeft:25, marginTop:10}}> 
 												{this.state.greeting?
-													<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/top-small.png"} />
+													<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 													:
-													<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/bottom-small.png"} />
+													<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 												}
 												<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
 													Meaningful Greeting
@@ -445,12 +449,12 @@ class Home extends React.Component {
 							
 							{this.state.not_found?
 							<div>
-								<a onClick={()=> this.handleToggleCallOpening1()} style={{cursor:'pointer'}}> 
+								<a onClick={()=> this.handleToggleCallOpening(1)} style={{cursor:'pointer'}}> 
 									<Row style={{marginLeft:15, marginTop:15}}> 
 									{this.state.first_call?
-										<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/top-small.png"} />
+										<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 										:
-										<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/bottom-small.png"} />
+										<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 									}
 										<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
 											Call Opening
@@ -469,12 +473,12 @@ class Home extends React.Component {
 									</Row>
 									: null }
 								</div>
-								<a onClick={()=> this.handleToggleCallOpening2()} style={{cursor:'pointer'}}> 
+								<a onClick={()=> this.handleToggleCallOpening(2)} style={{cursor:'pointer'}}> 
 									<Row style={{marginLeft:15, marginTop:15}}> 
 									{this.state.second_call?
-										<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/top-small.png"} />
+										<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 										:
-										<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/bottom-small.png"} />
+										<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 									}
 										<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
 											Call Opening
@@ -491,12 +495,12 @@ class Home extends React.Component {
 											})}
 									</div>
 									: null}
-								<a onClick={()=> this.handleToggleCallOpening3()} style={{cursor:'pointer'}}> 
+								<a onClick={()=> this.handleToggleCallOpening(3)} style={{cursor:'pointer'}}> 
 									<Row style={{marginLeft:15, marginTop:15}}> 
 										{this.state.third_call?
-											<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/top-small.png"} />
+											<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 											:
-											<img style={{marginLeft:10, width: 12, height: 6, marginTop:4 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/bottom-small.png"} />
+											<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 										}
 											<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
 												Call Opening
@@ -562,12 +566,11 @@ class Home extends React.Component {
 										</p>
 								</div>
 									<div style={{ position:'absolute', width:30, height:30, backgroundColor:'white', display:'flex', justifyContent:'center', alignItems:'center', borderRadius:50+'%',top:15, right:280}}>
-										<img style={{width: 9, height: 12 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/play-blue.png"} />
+										<FeatherIcon icon="play" size="18" color="#11263c" style={{marginTop:0}} /> 
 										
 									</div>
 									<div style={{ position:'absolute', width:30, height:30, backgroundColor:'white', display:'flex', justifyContent:'center', alignItems:'center', borderRadius:50+'%',top:15, right:230}}>
-										<img style={{width: 11, height: 10 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/flag.png"} />
-										
+										<FeatherIcon icon="flag" size="18" color="#11263c" style={{marginTop:0}} /> 
 									</div>
 							</div>
 
@@ -599,9 +602,11 @@ class Home extends React.Component {
 					
 					<div style={{display:'flex', flexDirection:'row', marginLeft:0, height:57, paddingLeft:30, paddingTop:13, backgroundColor:'#e6e7ee'}}>
 						<h1 style={{fontSize:24, fontFamily:'F37Ginger', fontWeight:'bold', fontStretch:'normal', color:'#332a7c'}}>Evaluation Form</h1>
-						<div style={{marginLeft:30}}> 
-							<img style={{marginLeft:10, width: 16, height: 16, marginTop:7 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/external.png"} />
-							<img style={{marginLeft:14, width: 15, height: 15, marginTop:7 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/x.png"} />
+						<div style={{position:'absolute', right:10}}> 
+							<FeatherIcon icon="external-link" size="20" color="#a1a9b3" style={{marginLeft:10, marginTop:3}}/>
+							{/* <img style={{marginLeft:10, width: 16, height: 16, marginTop:7 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/external.png"} />
+							 */}
+							<FeatherIcon icon="x" size="24" color="#a1a9b3" style={{marginLeft:10, marginTop:3}}/>
 						</div>
 					</div>
 					<div style={{display:'flex', justifyContent:'center', paddingTop:25}}>
@@ -614,9 +619,9 @@ class Home extends React.Component {
 								</div>
 								<div style={{position:'absolute', right:35, top:8}}> 
 									{this.state.is_opening_tab?
-										<img style={{marginLeft:10, width: 12, height: 6, marginTop:10 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/top-small.png"} />
+										<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 										:
-										<img style={{marginLeft:10, width: 12, height: 6, marginTop:10 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/bottom-small.png"} />
+										<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 										}
 								</div>
 							</Row>
@@ -643,9 +648,9 @@ class Home extends React.Component {
 								</div>
 								<div style={{position:'absolute', right:35, top:5}}> 
 									{this.state.is_closing_tab?
-									<img style={{marginLeft:10, width: 12, height: 6, marginTop:10 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/top-small.png"} />
+									<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 									:
-									<img style={{marginLeft:10, width: 12, height: 6, marginTop:10 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/bottom-small.png"} />
+									<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 									}
 								</div>
 							</Row>
@@ -672,9 +677,9 @@ class Home extends React.Component {
 								</div>
 								<div style={{position:'absolute', right:35, top:5}}> 
 									{this.state.is_more_tab?
-									<img style={{marginLeft:10, width: 12, height: 6, marginTop:10 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/top-small.png"} />
+									<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 									:
-									<img style={{marginLeft:10, width: 12, height: 6, marginTop:10 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/bottom-small.png"} />
+									<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 									}
 								</div>
 							</Row>

@@ -14,6 +14,8 @@ module.exports = {
   },
   module: {
     rules: [
+      { test: /\.css$/, use: 'css-loader' },
+      { test: /\.ts$/, use: 'ts-loader' },
       {
       	// for any file with a suffix of js or jsx
         test: /\.jsx?$/,
