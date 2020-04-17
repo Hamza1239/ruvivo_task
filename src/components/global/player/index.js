@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col} from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 
-class Header extends React.Component {
+class MediaPlayer extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -88,4 +88,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default MediaPlayer;

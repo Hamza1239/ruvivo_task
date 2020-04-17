@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col, Container} from 'react-bootstrap';
-import RightSideBar from './Component';
 import CallOpening2 from './open_call_2';
 import RecordedLine from './recorded';
 import {Link} from 'react-router-dom';
@@ -10,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FeatherIcon from 'feather-icons-react';
 import Header from '../global/header';
 import MediaPlayer from '../global/player';
-import RightSideBar from '../global/rightbar';
+import RightBar from '../global/rightbar';
 //import '../../index.css';
 
  
@@ -24,31 +23,11 @@ class Home extends React.Component {
 		call_opening2:[{found:false}, {found:false}, {found:false}, {found:false}],
 		first_call:true, second_call: true, third_call:true, recorded_line:true, greeting:false
 		}
-		this.toggleOpeningTab = this.toggleOpeningTab.bind(this);
-		this.toggleClosingTab = this.toggleClosingTab.bind(this);
-		this.toggleMoreTab = this.toggleMoreTab.bind(this);
+		
 		this.handleAllClick = this.handleAllClick.bind(this);
 		this.handleFoundClick = this.handleFoundClick.bind(this);
 		this.handleNotFoundClick = this.handleNotFoundClick.bind(this);
 	  }
-
-	  toggleOpeningTab() {
-		  this.setState({
-			  is_opening_tab: !this.state.is_opening_tab
-		  })
-	  }
-
-	  toggleClosingTab() {
-		this.setState({
-			is_closing_tab: !this.state.is_closing_tab
-		})
-		}
-
-		toggleMoreTab() {
-			this.setState({
-				is_more_tab: !this.state.is_more_tab
-			})
-		}
 		handleAllClick(){
 			this.setState({
 				all: true,
@@ -106,7 +85,7 @@ class Home extends React.Component {
     render () {
         return (
 			<Row>
-				<Col md={9} classname='whole'>  
+				<Col md={9} className="whole">  
 					<Header />
 					<MediaPlayer />
 					<Row>
@@ -502,7 +481,7 @@ class Home extends React.Component {
 					</Row>
 				</Col>
 				<Col md={3} style={{margin:0,padding:0, backgroundColor:'#f3f4f7', paddingBottom:80}}>
-					<RightSideBar /> 
+					<RightBar /> 
 				</Col>
 			</Row>
         );

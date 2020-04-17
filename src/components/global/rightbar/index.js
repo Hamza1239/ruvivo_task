@@ -1,10 +1,43 @@
 import React from 'react';
 import { Row, Col} from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
+import RightSideBar from './toggle'; 
 
-class Header extends React.Component {
+class RightBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state={
+      is_opening_tab: true, 
+      is_closing_tab:false, 
+      is_more_tab: false,
+      cards:[
+        {is_like:true, is_dislike: false},
+        {is_like:false, is_dislike: false},
+        {is_like:false, is_dislike: false},
+        {is_like:false, is_dislike: false}
+      ],
+    }
+    this.toggleOpeningTab = this.toggleOpeningTab.bind(this);
+		this.toggleClosingTab = this.toggleClosingTab.bind(this);
+		this.toggleMoreTab = this.toggleMoreTab.bind(this);
+  }
+
+  toggleOpeningTab() {
+    this.setState({
+      is_opening_tab: !this.state.is_opening_tab
+    })
+  }
+
+  toggleClosingTab() {
+  this.setState({
+    is_closing_tab: !this.state.is_closing_tab
+  })
+  }
+
+  toggleMoreTab() {
+    this.setState({
+      is_more_tab: !this.state.is_more_tab
+    })
   }
 
   render() {
@@ -117,4 +150,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default RightBar;

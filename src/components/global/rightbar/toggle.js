@@ -3,7 +3,7 @@ import { Col, Row} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 
-class RightSideBar extends React.Component {
+class ToggleRightSideBar extends React.Component {
 	constructor(props) {
         super(props);
         this.state={is_like:false, is_dislike:false}
@@ -50,4 +50,4 @@ class RightSideBar extends React.Component {
 	}
 }
 
-export default RightSideBar;	
+export default ToggleRightSideBar;	
