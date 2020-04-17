@@ -30,12 +30,12 @@ class CallOpening2 extends React.Component {
 		return (
             <Row style={{marginLeft:20}}>
             <Col md={6}> 
-                <h1 style={{fontSize:12, fontFamily: '#F37Ginger', color:'#a1a9b3'}}>
+                <h1 className="spouse-text">
                     Spouse State
                 </h1>
             </Col>
             <Col md={6}> 
-                <h1 style={{fontSize:12, fontFamily: '#F37Ginger', color:'#a1a9b3'}}>
+                <h1 className="not-found-text">
                     Not Found
                 </h1>
             </Col>

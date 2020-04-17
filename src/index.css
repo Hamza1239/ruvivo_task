@@ -97,6 +97,57 @@
     color:#a1a9b3;
 }
 
+.spouse-text{
+    font-family: F37Ginger;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: left;
+    color: #a1a9b3;
+}
+
+.snippet-text{
+    font-family: F37Ginger;
+    font-size: 12px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: left;
+    color: #11263c;
+}
+
+.time-left{
+    padding-top:5px;
+    font-size:10px;
+    color: #a1a9b3;
+    line-height:1.2;
+    font-family:F37Ginger;
+}
+
+.left-msg-text{
+    padding-left:20px;
+    padding-right:20px;
+    font-size:14px;
+    color:#11263c;
+    font-weight:normal;
+    font-family:F37Ginger;
+    padding-top:13px;
+    padding-bottom:13px;
+}
+
+.time-right{
+    padding-top:5px;
+    font-size:10px;
+    font-family:F37Ginger;
+    color: #a1a9b3;
+    position:absolute;
+    right:20px;
+}
 
 
 .name{

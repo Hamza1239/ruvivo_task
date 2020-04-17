@@ -405,17 +405,17 @@ class Home extends React.Component {
 						</Col>
 						<Col md={9} style={{paddingTop:10, borderLeft:'2px solid #f3f4f7',}}>
 							<div>
-								<p style={{paddingTop:5, fontSize:10, color:'#a1a9b3', lineHeight:1.2, fontFamily:'F37Ginger'}}>
+								<p className="time-left">
 									00:04 min
 								</p>
 							</div>
 							<div style={{backgroundColor:'#f3f4f7', width:70+'%', borderRadius:30}}>
-								<p style={{paddingLeft:20, paddingRight:20, fontSize:14, color:'#11263c', fontWeight:'normal', fontFamily:'F37Ginger', paddingTop:13, paddingBottom:13}}>
+								<p className="left-msg-text">
 									Hello There. Welcome to Flipkart.com. Some more text here.
 								</p>
 							</div>
 							<div style={{}}>
-								<p style={{paddingTop:5, position:'absolute', color:'#a1a9b3', fontSize:10, fontFamily:'F37Ginger', right:20}}>
+								<p className="time-right">
 									00:04 min
 								</p>
 							</div>
@@ -425,8 +425,8 @@ class Home extends React.Component {
 								</p>
 							</div>
 
-							<div style={{ }}>
-								<p style={{paddingTop:5, fontSize:10, color:'#a1a9b3', lineHeight:1.2, fontFamily:'F37Ginger'}}>
+							<div>
+								<p className="time-left">
 									00:04 min
 								</p>
 							</div>
@@ -436,8 +436,8 @@ class Home extends React.Component {
 								</p>
 							</div>
 
-							<div style={{}}>
-								<p style={{paddingTop:5, position:'absolute', color:'#a1a9b3', fontSize:10, fontFamily:'F37Ginger', right:20}}>
+							<div>
+								<p className="time-right">
 									00:04 min
 								</p>
 							</div>
@@ -457,7 +457,7 @@ class Home extends React.Component {
 							</div>
 
 							<div style={{}}>
-								<p style={{paddingTop:5, fontSize:10, color:'#a1a9b3', lineHeight:1.2, fontFamily:'F37Ginger'}}>
+								<p className="time-left">
 									00:04 min
 								</p>
 							</div>
@@ -468,7 +468,7 @@ class Home extends React.Component {
 							</div>
 
 							<div style={{}}>
-								<p style={{paddingTop:5, position:'absolute', color:'#a1a9b3', fontSize:10, fontFamily:'F37Ginger', right:20}}>
+								<p className="time-right">
 									00:04 min
 								</p>
 							</div>

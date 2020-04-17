@@ -30,7 +30,7 @@ class RecordedLine extends React.Component {
 		return (
             <Row style={{marginLeft:55}}>
             <Col md={12}> 
-                <h1 style={{fontSize:12, fontFamily: '#F37Ginger', fontWeight:300, color:'#11263c'}}>
+                <h1 className="snippet-text">
                     Snippet 00:23 min
                 </h1>
             </Col>
