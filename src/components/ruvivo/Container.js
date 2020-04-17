@@ -8,6 +8,7 @@ import Button from '../global/button';
 import BackdropFilter from "react-backdrop-filter";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FeatherIcon from 'feather-icons-react';
+//import '../../index.css';
 
  
 class Home extends React.Component {
@@ -102,7 +103,7 @@ class Home extends React.Component {
     render () {
         return (
 			<Row>
-				<Col md={9}>  
+				<Col md={9} classname='whole'>  
 					<Row style={{borderBottom:'3px solid #f3f4f7', height:60}}>
 						<Col md={2} style={{paddingLeft:40}}>
 							
