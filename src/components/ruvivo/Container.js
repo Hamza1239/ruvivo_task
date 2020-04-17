@@ -85,15 +85,15 @@ class Home extends React.Component {
     render () {
         return (
 			<Row>
-				<Col md={9} className="whole">  
+				<Col md={9}>  
 					<Header />
 					<MediaPlayer />
 					<Row>
-						<Col md={3} style={{marginRight:0, paddingRight:0}}>
-							<div style={{paddingTop:14,paddingLeft:20, backgroundColor:'#f3f4f7', height:60, width:100+'%'}}>
-								<h1 style={{fontSize:20, fontFamily:'F37Ginger', fontWeight:'bold', color:'#332a7c'}}>Moments</h1>
+						<Col md={3} className="zero-right">
+							<div className="heading-div">
+								<h1 className="heading-text">Moments</h1>
 							</div>
-							<Row style={{display:'flex', justifyContent:'center', paddingLeft:5, paddingTop:20, paddingRight:10}}>
+							<Row style={{}} className="button-row">
 								{this.state.all?
 									<Button style={{ backgroundColor: "#332a7c", height: 23, width: 44, borderRadius: 5, textAlign: 'center', paddingTop: 3, color: '#ffffff', fontSize: 10, fontFamily: 'F37Ginger', fontWeight: 'normal'}} text={'All'}/>
 									:
@@ -124,13 +124,13 @@ class Home extends React.Component {
 							{this.state.all?
 							<div>
 							<a onClick={()=> this.handleToggleCallOpening(1)} style={{cursor:'pointer'}}> 
-								<Row style={{marginLeft:15, marginTop:15}}> 
+								<Row className="margin-15"> 
 								{this.state.first_call?
 									<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 									:
 									<FeatherIcon icon="chevron-down" size="18" color='#11263c' />
 								}
-									<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
+									<h1 className="call-opening-text">
 										Call Opening
 									</h1>
 								</Row>
@@ -138,16 +138,16 @@ class Home extends React.Component {
 							{this.state.first_call?
 								<>
 									<a onClick={()=> this.handleRecordedLine()} style={{cursor:'pointer'}}> 
-										<Row style={{marginLeft:25, marginTop:10}}> 
+										<Row className="margin-25-10"> 
 											{this.state.recorded_line?
 												<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 												:
 												<FeatherIcon icon="chevron-down" size="18" color='#11263c' />
 											}
-											<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
+											<h1 className="call-opening-text">
 												Recorded Line
 											</h1>
-											<h1 style={{position:'absolute', right:20, fontSize:12, fontFamily:'F37Ginger', color:'#8bf087'}}>
+											<h1 className="found-text">
 												Found
 											</h1>
 										</Row>
@@ -162,17 +162,17 @@ class Home extends React.Component {
 										</div>
 									: null}
 
-									<a onClick={()=> this.handleGreeting()} style={{cursor:'pointer'}}> 
-										<Row style={{marginLeft:25, marginTop:10}}> 
+									<a onClick={()=> this.handleGreeting()} className="pointer"> 
+										<Row className="margin-25-10"> 
 											{this.state.greeting?
 												<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 												:
 												<FeatherIcon icon="chevron-down" size="18" color='#11263c' />
 											}
-											<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
+											<h1 className="call-opening-text">
 												Meaningful Greeting
 											</h1>
-											<h1 style={{position:'absolute', right:20, fontSize:12, fontFamily:'F37Ginger', color:'#8bf087'}}>
+											<h1 className="found-text">
 												Found
 											</h1>
 										</Row>
@@ -189,24 +189,24 @@ class Home extends React.Component {
 
 									<div>
 										<Row style={{marginTop:7}}> 
-											<h1 style={{marginLeft:75, fontFamily:'#F37Ginger', fontSize:12, color:'#a1a9b3'}}>
+											<h1 className="may-text">
 												May | Speak with
 											</h1>
-											<h1 style={{position:'absolute', right:20, fontWeight:'normal', fontSize:12, fontFamily:'F37Ginger', color:'#a1a9b3'}}>
+											<h1 className="not-found-text">
 												Not Found
 											</h1>
 										</Row>
 									</div>
 								</>
 							: null}
-							<a onClick={()=> this.handleToggleCallOpening(2)} style={{cursor:'pointer'}}> 
+							<a onClick={()=> this.handleToggleCallOpening(2)} className="pointer"> 
 								<Row style={{marginLeft:15, marginTop:15}}> 
 								{this.state.second_call?
 									<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 									:
 									<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 								}
-									<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
+									<h1 className="call-opening-text">
 										Call Opening
 									</h1>
 								</Row>
@@ -221,14 +221,14 @@ class Home extends React.Component {
 										})}
 								</div>
 								: null}
-							<a onClick={()=> this.handleToggleCallOpening(3)} style={{cursor:'pointer'}}> 
-								<Row style={{marginLeft:15, marginTop:15}}> 
+							<a onClick={()=> this.handleToggleCallOpening(3)} className="pointer"> 
+								<Row className="margin-15"> 
 									{this.state.third_call?
 										<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 										:
 										<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 									}
-										<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
+										<h1 className="call-opening-text">
 											Call Opening
 										</h1>
 								</Row>
@@ -249,31 +249,31 @@ class Home extends React.Component {
 
 							{this.state.found?
 							<div>
-								<a onClick={()=> this.handleToggleCallOpening(1)} style={{cursor:'pointer'}}> 
-									<Row style={{marginLeft:15, marginTop:15}}> 
+								<a onClick={()=> this.handleToggleCallOpening(1)} className="pointer"> 
+									<Row className="margin-15"> 
 									{this.state.first_call?
 										<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 										:
 										<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 									}
-										<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
+										<h1 className="call-opening-text">
 											Call Opening
 										</h1>
 									</Row>
 								</a>
 								{this.state.first_call?
 									<>
-										<a onClick={()=> this.handleRecordedLine()} style={{cursor:'pointer'}}> 
+										<a onClick={()=> this.handleRecordedLine()} className="pointer"> 
 											<Row style={{marginLeft:25, marginTop:10}}> 
 												{this.state.recorded_line?
 													<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 													:
 													<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 												}
-												<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
+												<h1 className="call-opening-text">
 													Recorded Line
 												</h1>
-												<h1 style={{position:'absolute', right:20, fontSize:12, fontFamily:'F37Ginger', color:'#8bf087'}}>
+												<h1 className="found-text">
 													Found
 												</h1>
 											</Row>
@@ -289,16 +289,16 @@ class Home extends React.Component {
 										: null}
 
 										<a onClick={()=> this.handleGreeting()} style={{cursor:'pointer'}}> 
-											<Row style={{marginLeft:25, marginTop:10}}> 
+											<Row className="margin-25-10"> 
 												{this.state.greeting?
 													<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 													:
 													<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 												}
-												<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
+												<h1 className="call-opening-text">
 													Meaningful Greeting
 												</h1>
-												<h1 style={{position:'absolute', right:20, fontSize:12, fontFamily:'F37Ginger', color:'#8bf087'}}>
+												<h1 className="found-text">
 													Found
 												</h1>
 											</Row>
@@ -331,14 +331,14 @@ class Home extends React.Component {
 							
 							{this.state.not_found?
 							<div>
-								<a onClick={()=> this.handleToggleCallOpening(1)} style={{cursor:'pointer'}}> 
-									<Row style={{marginLeft:15, marginTop:15}}> 
+								<a onClick={()=> this.handleToggleCallOpening(1)} className="pointer"> 
+									<Row className="margin-15"> 
 									{this.state.first_call?
 										<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 										:
 										<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 									}
-										<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
+										<h1 className="call-opening-text">
 											Call Opening
 										</h1>
 									</Row>
@@ -346,23 +346,23 @@ class Home extends React.Component {
 								<div>
 									{this.state.first_call?
 									<Row style={{marginTop:7}}> 
-										<h1 style={{marginLeft:75, fontFamily:'#F37Ginger', fontSize:12, color:'#a1a9b3'}}>
+										<h1 className="may-text">
 											May | Speak with
 										</h1>
-										<h1 style={{position:'absolute', right:20, fontWeight:'normal', fontSize:12, fontFamily:'F37Ginger', color:'#a1a9b3'}}>
+										<h1 className="not-found-text"> 
 											Not Found
 										</h1>
 									</Row>
 									: null }
 								</div>
-								<a onClick={()=> this.handleToggleCallOpening(2)} style={{cursor:'pointer'}}> 
+								<a onClick={()=> this.handleToggleCallOpening(2)} className="pointer"> 
 									<Row style={{marginLeft:15, marginTop:15}}> 
 									{this.state.second_call?
 										<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 										:
 										<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 									}
-										<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
+										<h1 className="call-opening-text">
 											Call Opening
 										</h1>
 									</Row>
@@ -377,14 +377,14 @@ class Home extends React.Component {
 											})}
 									</div>
 									: null}
-								<a onClick={()=> this.handleToggleCallOpening(3)} style={{cursor:'pointer'}}> 
+								<a onClick={()=> this.handleToggleCallOpening(3)} className="pointer"> 
 									<Row style={{marginLeft:15, marginTop:15}}> 
 										{this.state.third_call?
 											<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
 											:
 											<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
 										}
-											<h1 style={{marginLeft:10, fontFamily:'#F37Ginger', fontSize:12, color:'#11263c'}}>
+											<h1 className="call-opening-text">
 												Call Opening
 											</h1>
 									</Row>
