@@ -8,6 +8,9 @@ import Button from '../global/button';
 import BackdropFilter from "react-backdrop-filter";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FeatherIcon from 'feather-icons-react';
+import Header from '../global/header';
+import MediaPlayer from '../global/player';
+import RightSideBar from '../global/rightbar';
 //import '../../index.css';
 
  
@@ -104,109 +107,8 @@ class Home extends React.Component {
         return (
 			<Row>
 				<Col md={9} classname='whole'>  
-					<Row style={{borderBottom:'3px solid #f3f4f7', height:60}}>
-						<Col md={2} style={{paddingLeft:40}}>
-							
-							<Row style={{paddingTop:8, marginLeft:10, width:90+'%', borderRight:'3px solid #f3f4f7', cursor:'pointer'}} > 
-								 <FeatherIcon icon="arrow-left" size="22" color="#a1a9b3" style={{marginTop:7}} /> 
-								<p style={{marginLeft:10, paddingTop:5, color:'a1a9b3'}}>Back</p>
-							</Row>
-						</Col>
-						<Col md={3} style={{paddingLeft:40}}>
-							<div style={{marginTop:10, marginLeft:-28, borderRight:'3px solid #f3f4f7'}}> 
-								<p style={{color:'#332a7c', fontWeight:'bold', fontSize:24, fontFamily:'F37Ginger'}}>Jerome Murphy</p>
-								
-							</div>
-						</Col>
-						
-						<Col md={5} style={{paddingTop:10, marginLeft:-7}}>
-							<p style={{fontSize:12, fontFamily:'F37Ginger', color:'#11263c',fontWeight:'bold', margin:0, padding:0}}>4:14 mins</p>
-							<p style={{fontSize:12, fontFamily:'F37Ginger', color:'#11263c',fontWeight:'bold', margin:0, padding:0}}>Sep 10, 2020</p>
-						</Col>
-						<Col md={1} style={{paddingLeft:40, marginTop:15}}>
-							
-							<Row style={{cursor:'pointer', width:120, height:30,paddingLeft:12, backgroundColor:'#11263c', boxShadow:'0 3px 6px 0 rgba(161, 169, 179, 0.3)', borderRadius:5}}>
-							<FeatherIcon icon="copy" size="18" color="white" style={{marginTop:6}} /> 
-								<p style={{paddingLeft:10, paddingTop:3, fontSize:11, fontFamily:'F37Ginger',lineHeight:2.3, color:"#ffffff"}}>Copy Call ID</p>
-							</Row>
-						</Col>
-					</Row>
-
-					<Row style={{height:170, borderBottom:'3px solid #f3f4f7', paddingTop:10}}>
-						<Col md={2}>
-							<div style={{backgroundColor:'#332a7c', boxShadow:'0 1px 3px 0 rgba(51, 42, 124, 0.3)', cursor:'pointer', height:70, width:70, marginTop:30, marginLeft:30, borderRadius:50+'%'}}>
-								<div style={{display:'flex', justifyContent:'center', alignItems:'center', paddingTop:13}}> 
-									<FeatherIcon icon="play" size="30" color="white" style={{marginTop:7}} /> 
-								</div>
-							</div>
-							<div style={{paddingLeft:28, paddingTop:20}}>
-								<p style={{fontSize:14, color:'#a1a9b3', fontFamily:'F37Ginger', fontWeight:'bold'}}>00:33 / 04:14</p>
-							</div>
-						</Col>
-						<Col md={10}>
-							<div style={{display:'flex', justifyContent:'center',marginBottom:0,paddingBottom:0, marginTop:5, marginLeft:40}}>
-							
-								<p style={{padding:0, margin:0, color:'#a1a9b3', fontSize:10,fontFamily:'F37Ginger'}}>
-									AGENT
-								</p>
-							</div>
-							<Row style={{width:100+'%', marginTop:0, paddingTop:0, height:90}}>
-								<div style={{width:188, height:90, position:'relative', backgroundColor:'rgba(17, 38, 60, 0.05)',paddingTop:20}}>
-									
-									<div style={{ width:140,height:20, backgroundColor:'#8bf087'}}>
-											
-									</div>
-									<div style={{width:797,height:10, zIndex:-10, backgroundColor:'#f3f4f7'}}>
-
-									</div>
-									<div style={{marginLeft:160, width:47,height:20, backgroundColor:'#f25767'}}>
-
-									</div>
-									<div style={{position:'absolute', border:'3px solid #11263c', width:5, height:90, right:0, top:0}}>
-
-									</div>
-									
-								</div>
-								<div style={{paddingTop:20}}>	
-									<Row> 
-										<div style={{ marginLeft:42, width:23, height:20, backgroundColor:'#8bf087'}}>
-
-										</div>
-										<div style={{ marginLeft:57, width:182, height:20, backgroundColor:'#8bf087'}}>
-
-										</div>
-										<div style={{ marginLeft:28, width:132, height:20, backgroundColor:'#8bf087'}}>
-
-										</div>
-									</Row>
-									<Row style={{marginTop:10}}>
-										<div style={{marginLeft:65, width:192,height:20, backgroundColor:'#f25767'}}>
-
-										</div>
-										<div style={{marginLeft:47, width:28,height:20, backgroundColor:'#f25767'}}>
-
-										</div>
-										<div style={{marginLeft:102, width:80,height:20, backgroundColor:'#f25767'}}>
-
-										</div>
-									</Row>
-								</div>
-							</Row>
-							<div style={{display:'flex', justifyContent:'center',marginTop:0,paddingTop:0, marginBottom:5, marginLeft:40}}>
-								<p style={{padding:0, margin:0, color:'#a1a9b3', fontSize:10,fontFamily:'F37Ginger'}}>
-									CUSTOMER
-								</p>
-							</div>
-							<div style={{position:'absolute', right:70, bottom:1}}>
-								<Row> 
-									<p style={{color:'#a1a9b3', fontSize:14,fontFamily:'F37Ginger', marginRight:5}}>
-										1x
-									</p>
-									<FeatherIcon icon="chevron-up" size="18" color="#a1a9b3"/>
-								</Row>
-							</div>
-						</Col>
-					</Row>
+					<Header />
+					<MediaPlayer />
 					<Row>
 						<Col md={3} style={{marginRight:0, paddingRight:0}}>
 							<div style={{paddingTop:14,paddingLeft:20, backgroundColor:'#f3f4f7', height:60, width:100+'%'}}>
@@ -600,109 +502,7 @@ class Home extends React.Component {
 					</Row>
 				</Col>
 				<Col md={3} style={{margin:0,padding:0, backgroundColor:'#f3f4f7', paddingBottom:80}}>
-					
-					<div style={{display:'flex', flexDirection:'row', marginLeft:0, height:57, paddingLeft:30, paddingTop:13, backgroundColor:'#e6e7ee'}}>
-						<h1 style={{fontSize:24, fontFamily:'F37Ginger', fontWeight:'bold', fontStretch:'normal', color:'#332a7c'}}>Evaluation Form</h1>
-						<div style={{position:'absolute', right:10}}> 
-							<FeatherIcon icon="external-link" size="20" color="#a1a9b3" style={{marginLeft:10, marginTop:3}}/>
-							{/* <img style={{marginLeft:10, width: 16, height: 16, marginTop:7 }} src={"https://s3-ap-southeast-1.amazonaws.com/storage.elearning.com/ruvivo/external.png"} />
-							 */}
-							<FeatherIcon icon="x" size="24" color="#a1a9b3" style={{marginLeft:10, marginTop:3}}/>
-						</div>
-					</div>
-					<div style={{display:'flex', justifyContent:'center', paddingTop:25}}>
-						<div style={{ boxShadow: '0 10px 20px 0 rgba(161, 169, 179, 0.25)', backgroundColor:'white', width:90+'%', borderRadius:10}}>
-							<Row onClick={this.toggleOpeningTab} style={{cursor:'pointer', position:'relative'}}> 
-								<div style={{paddingLeft:30, paddingTop:8}}> 
-									<h1 style={{fontSize:16, fontFamily: 'F37Ginger', color:'#11263c', fontWeight:'normal'}}> 
-										Opening
-									</h1>
-								</div>
-								<div style={{position:'absolute', right:35, top:8}}> 
-									{this.state.is_opening_tab?
-										<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
-										:
-										<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
-										}
-								</div>
-							</Row>
-							{this.state.is_opening_tab?
-							<div style={{marginTop: 5 }}>
-									{this.state.cards.map(function (card, i) {
-										return (
-											<RightSideBar card={card}/>
-										)
-									})}
-							</div>
-							: null}
-						</div>
-					</div>	
-
-
-					<div style={{display:'flex', justifyContent:'center', marginTop:25}}>
-					<div style={{ boxShadow: '0 10px 20px 0 rgba(161, 169, 179, 0.25)', backgroundColor:'white', width:90+'%', borderRadius:10}}>
-							<Row onClick={this.toggleClosingTab} style={{cursor:'pointer', position:'relative'}}> 
-								<div style={{paddingLeft:30, paddingTop:8}}> 
-									<h1 style={{fontSize:16, fontFamily: 'F37Ginger', color:'#11263c', fontWeight:'normal'}}> 
-										Closing
-									</h1>
-								</div>
-								<div style={{position:'absolute', right:35, top:5}}> 
-									{this.state.is_closing_tab?
-									<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
-									:
-									<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
-									}
-								</div>
-							</Row>
-							{this.state.is_closing_tab?
-							<div style={{marginTop: 5 }}>
-									{this.state.cards.map(function (card, i) {
-										return (
-											<RightSideBar card={card} />
-										)
-									})}
-							</div>
-							: null}
-						</div>
-					</div>		
-
-
-					<div style={{display:'flex', justifyContent:'center', marginTop:25}}>
-					<div style={{ boxShadow: '0 10px 20px 0 rgba(161, 169, 179, 0.25)', backgroundColor:'white', width:90+'%', borderRadius:10}}>
-							<Row onClick={this.toggleMoreTab} style={{cursor:'pointer', position:'relative'}}> 
-							<div style={{paddingLeft:30, paddingTop:8}}> 
-									<h1 style={{fontSize:16, fontFamily: 'F37Ginger', color:'#11263c', fontWeight:'normal'}}> 
-										Something More
-									</h1>
-								</div>
-								<div style={{position:'absolute', right:35, top:5}}> 
-									{this.state.is_more_tab?
-									<FeatherIcon icon="chevron-up" size="18" color="#11263c"/>
-									:
-									<FeatherIcon icon="chevron-down" size="18" color="#11263c"/>
-									}
-								</div>
-							</Row>
-							{this.state.is_more_tab?
-							<div style={{marginTop: 5 }}>
-									{this.state.cards.map(function (card, i) {
-										return (
-											<RightSideBar card={card} />
-										)
-									})}
-							</div>
-							: null}
-						</div>
-					</div>	
-
-					<div style={{position:'absolute', marginTop:20, width:100+'%', bottom:0, marginTop:20}}> 
-						<div style={{display:'flex', justifyContent:'center', alignItems:'center', position:'relative', backgroundColor:'#332a7c', cursor:'pointer', height:60,  width:100+'%', bottom:0}}>
-							<h1 style={{fontSize:24, fontWeight:'normal', fontFamily:'F37Ginger', lineHeight:1.21, color:'white'}}> 
-								Submit
-							</h1>
-						</div>	
-					</div>
+					<RightSideBar /> 
 				</Col>
 			</Row>
         );
