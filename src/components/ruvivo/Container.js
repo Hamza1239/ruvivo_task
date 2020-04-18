@@ -10,6 +10,7 @@ import FeatherIcon from 'feather-icons-react';
 import Header from '../global/header';
 import MediaPlayer from '../global/player';
 import RightBar from '../global/rightbar';
+import CallDropDowns from '../global/call-dropdowns';
 //import '../../index.css';
 
  
@@ -87,39 +88,41 @@ class Home extends React.Component {
 			<Row>
 				<Col md={9}>  
 					<Header />
+					<CallDropDowns />
 					<MediaPlayer />
 					<Row>
 						<Col md={3} className="zero-right">
-							<div className="heading-div">
-								<h1 className="heading-text">Moments</h1>
+							<div className="moment-div">
+								<p className="moment-text">Moments</p>
+								<div className="button-row">
+									{this.state.all?
+										<Button style={{ backgroundColor: "#332a7c", height: 18, width: 30, borderBottomLeftRadius: 5, borderTopLeftRadius:5, textAlign: 'center', paddingTop: 2, color: '#ffffff', fontSize: 10, fontFamily: 'F37Ginger', fontWeight: 'normal'}} text={'All'}/>
+										:
+										<a onClick={()=>this.handleAllClick()}  style={{cursor:'pointer'}}>
+											<Button style={{  backgroundColor: "#f3f4f7", height: 18, width: 30, borderBottomLeftRadius: 5, borderTopLeftRadius:5, textAlign: 'center', paddingTop: 2, color: '#332a7c', fontSize: 10, fontFamily: 'F37Ginger', fontWeight: 'normal'}} text={'All'}/>
+										</a>
+									}
+									<div style={{marginLeft:0}}> 
+									{this.state.found?
+										<Button style={{ backgroundColor: "#332a7c", height: 18, width: 35,  textAlign: 'center', paddingTop: 2, color: '#ffffff', fontSize: 10, fontFamily: 'F37Ginger', fontWeight: 'normal'}} text={'Found'}/>
+										:
+										<a onClick={()=>this.handleFoundClick()}  style={{cursor:'pointer'}}>
+											<Button style={{  backgroundColor: "#f3f4f7", height: 18, width: 35, textAlign: 'center', paddingTop: 2, color: '#332a7c', fontSize: 10, fontFamily: 'F37Ginger', fontWeight: 'normal'}} text={'Found'}/>
+										</a>
+									}
+									</div>
+									<div style={{marginLeft:0}}> 
+									{this.state.not_found?
+										<Button style={{ backgroundColor: "#332a7c", height: 18, width: 50, borderBottomRightRadius: 5, borderTopRightRadius: 5, textAlign: 'center', paddingTop: 2, color: '#ffffff', fontSize: 10, fontFamily: 'F37Ginger', fontWeight: 'normal'}} text={'Not Found'}/>
+										:
+										<a onClick={()=>this.handleNotFoundClick()} style={{cursor:'pointer'}}>
+											<Button style={{  backgroundColor: "#f3f4f7", height: 18, width: 50, borderBottomRightRadius: 5,  borderTopRightRadius: 5,  textAlign: 'center', paddingTop: 2, color: '#332a7c', fontSize: 10, fontFamily: 'F37Ginger', fontWeight: 'normal'}} text={'Not Found'}/>
+										</a>
+									}
+									</div>
+								</div>
 							</div>
-							<Row style={{}} className="button-row">
-								{this.state.all?
-									<Button style={{ backgroundColor: "#332a7c", height: 23, width: 44, borderRadius: 5, textAlign: 'center', paddingTop: 3, color: '#ffffff', fontSize: 10, fontFamily: 'F37Ginger', fontWeight: 'normal'}} text={'All'}/>
-									:
-									<a onClick={()=>this.handleAllClick()}  style={{cursor:'pointer'}}>
-										<Button style={{  backgroundColor: "#f3f4f7", height: 23, width: 44, borderRadius: 5, textAlign: 'center', paddingTop: 3, color: '#332a7c', fontSize: 10, fontFamily: 'F37Ginger', fontWeight: 'normal'}} text={'All'}/>
-									</a>
-								}
-								<div style={{marginLeft:15}}> 
-								{this.state.found?
-									<Button style={{ backgroundColor: "#332a7c", height: 23, width: 61, borderRadius: 5, textAlign: 'center', paddingTop: 3, color: '#ffffff', fontSize: 10, fontFamily: 'F37Ginger', fontWeight: 'normal'}} text={'Found'}/>
-									:
-									<a onClick={()=>this.handleFoundClick()}  style={{cursor:'pointer'}}>
-										<Button style={{  backgroundColor: "#f3f4f7", height: 23, width: 61, borderRadius: 5, textAlign: 'center', paddingTop: 3, color: '#332a7c', fontSize: 10, fontFamily: 'F37Ginger', fontWeight: 'normal'}} text={'Found'}/>
-									</a>
-								}
-								</div>
-								<div style={{marginLeft:15}}> 
-								{this.state.not_found?
-									<Button style={{ backgroundColor: "#332a7c", height: 23, width: 81, borderRadius: 5, textAlign: 'center', paddingTop: 3, color: '#ffffff', fontSize: 10, fontFamily: 'F37Ginger', fontWeight: 'normal'}} text={'Not Found'}/>
-									:
-									<a onClick={()=>this.handleNotFoundClick()} style={{cursor:'pointer'}}>
-										<Button style={{  backgroundColor: "#f3f4f7", height: 23, width: 81, borderRadius: 5, textAlign: 'center', paddingTop: 3, color: '#332a7c', fontSize: 10, fontFamily: 'F37Ginger', fontWeight: 'normal'}} text={'Not Found'}/>
-									</a>
-								}
-								</div>
-							</Row>
+							
 
 							{this.state.all?
 							<div>
@@ -403,11 +406,14 @@ class Home extends React.Component {
 							</div>
 							: null}
 						</Col>
-						<Col md={9} style={{paddingTop:10, borderLeft:'2px solid #f3f4f7',}}>
+						<Col md={9} style={{paddingTop:10}}>
 							<div>
 								<p className="time-left">
 									00:04 min
 								</p>
+								<div className="search-div pointer">
+									<FeatherIcon icon="search" size="18" color="#ffffff" style={{marginTop:0}} /> 
+								</div>
 							</div>
 							<div style={{backgroundColor:'#f3f4f7', width:70+'%', borderRadius:30}}>
 								<p className="left-msg-text">
@@ -480,7 +486,7 @@ class Home extends React.Component {
 						</Col>
 					</Row>
 				</Col>
-				<Col md={3} style={{margin:0,padding:0, backgroundColor:'#f3f4f7', paddingBottom:80}}>
+				<Col md={3} style={{margin:0,padding:0, backgroundColor:'#f3f4f7', borderLeft:'2px solid #11263c', paddingBottom:80}}>
 					<RightBar /> 
 				</Col>
 			</Row>

@@ -35,7 +35,7 @@ class CallOpening2 extends React.Component {
                 </h1>
             </Col>
             <Col md={6}> 
-                <h1 className="not-found-text">
+                <h1 className="not-found-text" style={{marginRight:15}}>
                     Not Found
                 </h1>
             </Col>
