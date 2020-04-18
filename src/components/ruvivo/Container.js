@@ -94,7 +94,7 @@ class Home extends React.Component {
 						<Col md={3} className="zero-right">
 							<div className="moment-div">
 								<p className="moment-text">Moments</p>
-								<div className="button-row">
+								<div className="all-button-row">
 									{this.state.all?
 										<Button style={{ backgroundColor: "#332a7c", height: 18, width: 30, borderBottomLeftRadius: 5, borderTopLeftRadius:5, textAlign: 'center', paddingTop: 2, color: '#ffffff', fontSize: 10, fontFamily: 'F37Ginger', fontWeight: 'normal'}} text={'All'}/>
 										:
