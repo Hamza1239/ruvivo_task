@@ -391,13 +391,13 @@
     color: #11263c;
 }
 
-.search-div{
+.black-btn{
     position: absolute;
     right: 30px;
     width: 38px;
     height: 30px;
     border-radius: 3.5px;
-    margin-top: -3px;
+    margin-top: -38px;
     box-shadow: 0 5px 10px 0 rgba(17, 38, 60, 0.25);
     background-color: #11263c;
     display: flex;

@@ -420,19 +420,19 @@ class Home extends React.Component {
 								</p>
 								
 								{this.state.is_search_tab?
-									<div style={{position:'absolute', left:0, top:0, width:100+'%'}}> 
+									<div className="search-tab-div"> 
 										<div className="search-bar"> 
 											<input type="text" className="form-control searching-bar" placeholder="Start typing to search..." id="search-input" />
 										</div>
 										<a onClick={()=>this.toggleSearchTab()}>
-											<div className="search-div pointer" >
+											<div className="black-btn pointer" >
 												<FeatherIcon icon="x" size="18" color="#ffffff"  /> 
 											</div>
 										</a>
 									</div>
 								:
 								<a onClick={()=>this.toggleSearchTab()}> 
-									<div className="search-div pointer">
+									<div className="black-btn pointer">
 										<FeatherIcon icon="search" size="18" color="#ffffff" /> 
 									</div>
 								</a>
