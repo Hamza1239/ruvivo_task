@@ -98,7 +98,7 @@ class RightBar extends React.Component {
                   }
                 </div>
                 {this.state.is_department_tab?
-                <div style={{marginTop: -5 , width:100+'%', paddingBottom:3, zIndex:10}}>
+                <div style={{marginTop: -5 , marginLeft:15, marginRight:15, backgroundColor:'white', borderRadius:5, width:100+'%', paddingBottom:3, zIndex:10}}>
                     {this.state.department.map(function (card, i) {
                       return (
                         <ScoreCard card={card} current_index={i}/>
@@ -126,7 +126,7 @@ class RightBar extends React.Component {
                   }
                 </div>
                 {this.state.is_call_type_tab?
-                <div style={{marginTop: -5 , width:100+'%', paddingBottom:3, zIndex:10}}>
+                <div style={{marginTop: -5 , width:100+'%', marginLeft:15, marginRight:15, backgroundColor:'white', borderRadius:5, paddingBottom:3, zIndex:10}}>
                     {this.state.call_type.map(function (card, i) {
                       return (
                         <ScoreCard card={card} current_index={i}/>
@@ -156,7 +156,7 @@ class RightBar extends React.Component {
                   }
                 </div>
                 {this.state.is_call_status_tab?
-                <div style={{marginTop: -5 , width:100+'%', paddingBottom:3, zIndex:10}}>
+                <div style={{marginTop: -5 , width:100+'%', marginLeft:15, marginRight:15, backgroundColor:'white', borderRadius:5, paddingBottom:3, zIndex:10}}>
                     {this.state.call_status.map(function (card, i) {
                       return (
                         <ScoreCard card={card} current_index={i}/>

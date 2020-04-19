@@ -18,6 +18,7 @@ class Home extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state={
+		is_search_tab:true,
 		is_opening_tab: true, is_closing_tab:false, is_more_tab: false, all:true, found:false, not_found:false,
 		cards:[{is_like:true, is_dislike: false},{is_like:false, is_dislike: false},{is_like:false, is_dislike: false},{is_like:false, is_dislike: false}],
 		//call_opening1: [recorded_line:[{}]]
@@ -28,6 +29,7 @@ class Home extends React.Component {
 		this.handleAllClick = this.handleAllClick.bind(this);
 		this.handleFoundClick = this.handleFoundClick.bind(this);
 		this.handleNotFoundClick = this.handleNotFoundClick.bind(this);
+		this.toggleSearchTab = this.toggleSearchTab.bind(this);
 	  }
 		handleAllClick(){
 			this.setState({
@@ -53,6 +55,11 @@ class Home extends React.Component {
 			})
 		}
 
+		toggleSearchTab(){
+			this.setState({
+				is_search_tab: !this.state.is_search_tab
+			})
+		}
 
 		handleToggleCallOpening(call){
 			if(call==1){
@@ -411,9 +418,25 @@ class Home extends React.Component {
 								<p className="time-left">
 									00:04 min
 								</p>
-								<div className="search-div pointer">
-									<FeatherIcon icon="search" size="18" color="#ffffff" style={{marginTop:0}} /> 
-								</div>
+								
+								{this.state.is_search_tab?
+									<div style={{position:'absolute', left:0, top:0, width:100+'%'}}> 
+										<div className="search-bar"> 
+											<input type="text" className="form-control searching-bar" placeholder="Start typing to search..." id="search-input" />
+										</div>
+										<a onClick={()=>this.toggleSearchTab()}>
+											<div className="search-div pointer" >
+												<FeatherIcon icon="x" size="18" color="#ffffff"  /> 
+											</div>
+										</a>
+									</div>
+								:
+								<a onClick={()=>this.toggleSearchTab()}> 
+									<div className="search-div pointer">
+										<FeatherIcon icon="search" size="18" color="#ffffff" /> 
+									</div>
+								</a>
+								}
 							</div>
 							<div style={{backgroundColor:'#f3f4f7', width:70+'%', borderRadius:30}}>
 								<p className="left-msg-text">

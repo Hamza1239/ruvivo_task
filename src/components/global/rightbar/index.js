@@ -10,7 +10,7 @@ class RightBar extends React.Component {
     this.state={
       is_opening_tab: true, 
       is_closing_tab:false, 
-      is_more_tab: false,
+      is_more_tab: true,
       cards:[
         {is_like:true, is_dislike: false},
         {is_like:false, is_dislike: true},

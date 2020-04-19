@@ -14,9 +14,9 @@ class RecordedLine extends React.Component {
 
 	render() {
 		return (
-            <div style={{display:'flex', flexDirection:'row', marginLeft:15, marginRight:15, backgroundColor:'#ffffff'}}>
+            <div style={{display:'flex', flexDirection:'row', backgroundColor:'#ffffff'}}>
                 <Col md={12}> 
-                    <hr style={{color:'#11263c', marginTop:3, marginBottom:9, marginRight:15}}/>
+                    <hr style={{color:'#11263c', marginTop:0, marginBottom:9, marginRight:15}}/>
                     <h1 className="snippet-text pointer">
                         {this.props.card.name}
                     </h1>
